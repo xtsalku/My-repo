@@ -3,11 +3,11 @@ public class Main
 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-	String[] makanan = new String[10];
-	String[] nospace = new String[10];
-	int[] jumlah_pesanan = new int[10];
-	int[] harga = new int[10];
-	
+	String[] makanan = new String[20];
+	String[] nospace = new String[20];
+	int[] jumlah_pesanan = new int[20];
+	int[] harga = new int[20];
+	double[] subtotal = new double[20];
 	String ulang;
 		
 		System.out.println("===== Selamat Datang =====");
@@ -49,7 +49,11 @@ public class Main
 		default : 
             System.out.println("Menu Pesanan Yang Anda Cari Tidak Tersedia");
 		};
-		System.out.println("Pesanan anda : "makanan[i]+" Dengan Harga :"+harga[i]);
+		subtotal[i] = (jumlah_pesanan[i] * harga[i]);
+		System.out.println("| No\tnama\tjumlah\tharga\tsubtotal |");
+		System.out.println("------------------------------------------");
+		System.out.println("| "+i+1+"\t"+makanan[i]+"\t"+jumlah_pesanan[i]+"\t"+harga[i]+"\t"+subtotal[i]+" |");
+		System.out.println("------------------------------------------");
 		};
 	} 
 }
