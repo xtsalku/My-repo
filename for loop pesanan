@@ -1,0 +1,55 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+	String[] makanan = new String[10];
+	String[] nospace = new String[10];
+	int[] jumlah_pesanan = new int[10];
+	int[] harga = new int[10];
+	
+	String ulang;
+		
+		System.out.println("===== Selamat Datang =====");
+		System.out.println("=====   Cafe kitaa   =====");
+		System.out.println("-----------------------");
+		System.out.println();
+		System.out.println("=====      menu      =====");
+		System.out.println("|    Es teh : Rp.2000    |");
+		System.out.println("|  Es Jeruk : Rp.3000    |");
+		System.out.println("|    Jhosua : Rp.5000    |");
+		System.out.println("=====      menu      =====");
+
+		do{
+		for(int i=0; i<1;i++){
+		System.out.println();
+		System.out.print(">>  Masukkan Pesanan Anda   : ");
+		makanan[i]=input.nextLine().replace(" ","");
+		System.out.println("----------------------------------------------");
+		System.out.print(">>  Masukkan jumlah yang ingin di pesan : ");
+		jumlah_pesanan[i]=input.nextInt();
+		
+		};
+		System.out.print("ingin menambah pesanan [y/n] : ");
+		ulang = input.next();
+		}while(ulang.equalsIgnoreCase("y")); //mengulang pesanan
+		
+		for(int i=0;i<makanan.length;i++){
+		    
+		switch (makanan[i]){
+		case "Esteh" :
+		    harga[i]=2000;
+		    break;
+		case "Esjeruk" :
+		    harga[i]=3000;
+		    break;
+	    case "Jhosua" :
+		    harga[i]=5000;
+		    break;
+		default : 
+            System.out.println("Menu Pesanan Yang Anda Cari Tidak Tersedia");
+		};
+		System.out.println("Pesanan anda : "makanan[i]+" Dengan Harga :"+harga[i]);
+		};
+	} 
+}
