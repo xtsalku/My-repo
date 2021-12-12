@@ -50,6 +50,8 @@ public class Main
             System.out.println("Menu Pesanan Yang Anda Cari Tidak Tersedia");
 		};
 		subtotal[i] = (jumlah_pesanan[i] * harga[i]);
+		System.out.println();
+		System.out.println("------------------------------------------");
 		System.out.println("| No\tnama\tjumlah\tharga\tsubtotal |");
 		System.out.println("------------------------------------------");
 		System.out.println("| "+i+1+"\t"+makanan[i]+"\t"+jumlah_pesanan[i]+"\t"+harga[i]+"\t"+subtotal[i]+" |");
