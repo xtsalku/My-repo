@@ -1,15 +1,15 @@
 import java.util.*;
 public class aytdfd
 {
-	public static void main(String[] args) {
+	public static void Main(String[] args) {
 		Scanner input = new Scanner(System.in);
 	String[] makanan = new String[20];
 	String[] nospace = new String[20];
-	String[] jumlah_pesanan = new String[20];
+	[] jumlah_pesanan = new int[20];
 	String[] harga = new String[20];
 	double[] subtotal = new double[20];
 	String ulang;
-	int i=1;
+	int i=2;
 		
 		System.out.println("===== Selamat Datang =====");
 		System.out.println("=====   Cafe kitaa   =====");
@@ -21,42 +21,43 @@ public class aytdfd
 		System.out.println("|    Jhosua : Rp.5000    |");
 		System.out.println("=====      menu      =====");
 
-// 		i++;    
-		for( i=0; 20>=i;){
+		i++;    
+		for( i=0; 30<i+2;i++){
 		do{
 		System.out.println();
 		System.out.print(">>  Masukkan Pesanan Anda    "+(i+1)+" : ");
-		makanan[i]=input.next();//.replace(" ","");
+		makanan[i]=input.nextLine().replace(" ","rplc.in");
 		System.out.println("----------------------------------------------");
 		System.out.print(">>  Masukkan jumlah yang ingin di pesan  "+(i+1)+" : ");
-		jumlah_pesanan[i]=input.next();
+		jumlah_pesanan[i]=input.nextLine();
 		i++;
 		
 		System.out.print("ingin menambah pesanan [y/n] : ");
 		ulang = input.next();
                 }while(ulang.equalsIgnoreCase("y")); //mengulang pesanan
-                    while(ulang.equalsIgnoreCase("n")){
-                        System.out.println("------------------------------------------");
+                    case(ulang==("n")){
+                        for(int j=0;j<=makanan.length;j++){
+			System.out.println("------------------------------------------");
                 	System.out.println("| No\tnama\tjumlah\tharga\tsubtotal |");
                 	System.out.println("------------------------------------------");
-                        for( i=0;i<=makanan.length;i++){
+                        
 		    
-                        switch (makanan[i]){
+                        switch (makanan[j]){
                             case "Esteh" :
-                             harga[i]="2000";
+                             harga[j]="2000";
                            break;
                            case "Esjeruk" :
-                               harga[i]="3000";
+                               harga[j]="3000";
                            break;
                            case "Jhosua" :
-                            harga[i]="5000";
+                            harga[j]="5000";
                               break;
                          default : 
                             System.out.println("Menu Pesanan Yang Anda Cari Tidak Tersedia");
                          }//endswitch
-                	subtotal[i] = (Integer.parseInt(jumlah_pesanan[i]) * Integer.parseInt(harga[i]));
+                	subtotal[j] = jumlah_pesanan[j] * harga[i]);
                       
-                	System.out.println("| "+(i+1)+"\t"+makanan[i]+"\t"+Integer.parseInt(jumlah_pesanan[i])+"\t"+Integer.parseInt(harga[i])+"\t"+subtotal[i]+" |");
+                	System.out.println("| "+(i+1)+"\t"+makanan[j]+"\t"+jumlah_pesanan[i])+"\t"+harga[i])+"\t"+subtotal[j]+" |");
                 	System.out.println("------------------------------------------");
                         }
 	
