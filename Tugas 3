@@ -11,7 +11,7 @@ public class Main
 	    String ulang;
 	    do{
 	        System.out.println();
-	   System.out.print("Masukkan data yang ingin di masukkan : ");
+	   System.out.print("Berapa Jumlah Data Yang Ingin Anda Inputkan ? : ");
 	   jmlh_data = input.nextInt();
 	   
 	   for(i=1;i<=jmlh_data;i++){
@@ -30,7 +30,7 @@ public class Main
 	    String jwb = input.next();
 	    System.out.println("");
 	    while(jwb.equals("y") || jwb.equals("Y")){
-	         System.out.println("-----------------------------------"); 
+	         System.out.println("|----------------------------------|"); 
                 System.out.println("|no |  Nama Siswa  |   NIM Siswa   |");
                 System.out.println("|---|--------------|---------------|");
 
@@ -38,7 +38,7 @@ public class Main
                   for(i=1;i<=jmlh_data;i++){
                       System.out.printf("| %-2d",i);
                       System.out.printf("|\t %-10s",nama[i]);
-                      System.out.printf("|\t %10s",nim[i]);
+                      System.out.printf("|\t %10s",nim[i]+"|");
                       System.out.println();
                       	           
 	        };
