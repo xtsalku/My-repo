@@ -7,8 +7,7 @@ public class Main
 		
 	    String[] nama = new String[100];
 	    String[] nim = new String[100];
-	    String[] alamat = new String[100];
-	    String[] nmr_hp = new String[100];
+	    
 	    String ulang;
 	    do{
 	        System.out.println();
@@ -21,11 +20,7 @@ public class Main
 	       nama[i] = input.next();
 	       System.out.print("NIM Mahasiswa    = ");
 	       nim[i] = input.next();
-	       System.out.print("Alamat Mahasiswa = ");
-	       alamat[i] = input.next();
-	       System.out.print("Nmr HP Mahasiswa = ");
-	       nmr_hp[i] = input.next();
-	       
+	       	       
 	   };
 	   System.out.println("");
 	    System.out.println("==================================");
@@ -35,13 +30,17 @@ public class Main
 	    String jwb = input.next();
 	    System.out.println("");
 	    while(jwb.equals("y") || jwb.equals("Y")){
-	        for(i=1;i<=jmlh_data;i++){
-	            System.out.println("==== Data ke-"+i+" ====");
-	            System.out.println("Nama Mahasiswa     = "+ nama[i].toUpperCase());
-	            System.out.println("NIM Mahasiswa      = "+ nim[i]);
-	            System.out.println("Alamat Mahasiswa   = "+ alamat[i]);
-	            System.out.println("Nomor HP Mahasiswa = "+ nmr_hp[i]);
-	           
+	         System.out.println("-----------------------------------"); 
+                System.out.println("|no |  Nama Siswa  |   NIM Siswa   |");
+                System.out.println("|---|--------------|---------------|");
+
+                
+                  for(i=1;i<=jmlh_data;i++){
+                      System.out.printf("| %-2d",i);
+                      System.out.printf("|\t %-10s",nama[i]);
+                      System.out.printf("|\t %10s",nim[i]);
+                      System.out.println();
+                      	           
 	        };
 	        break;
 	    }
