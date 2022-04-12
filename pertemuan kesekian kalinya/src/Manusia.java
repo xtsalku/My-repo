@@ -15,10 +15,10 @@ public class Manusia {
     
     public Manusia(){ }
     
-    public Manusia(String nama,int umur,String jk){
+    public Manusia(String nama,int umur,String Jeniskelamin){
         this.nama = nama;
         this.umur = umur;
-        this.Jeniskelamin = jk;
+        this.Jeniskelamin = Jeniskelamin;
     }
     
     
@@ -42,7 +42,7 @@ public class Manusia {
     return Jeniskelamin;
     }
     
-    public void setJeniskelamin(String nama){
+    public void setJeniskelamin(String Jeniskelamin){
     this.Jeniskelamin = Jeniskelamin;
     }
     
