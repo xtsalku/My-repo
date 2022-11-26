@@ -1,12 +1,18 @@
 import java.util.*;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 public class fix_UTS{
 	public static void main(String[] args) {
+                DecimalFormat kursIndonesia = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+                DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
 		Scanner input = new Scanner(System.in);
 	String[] jumlah = new String[20];
-	//String[] nospace = new String[20];
+	double[] total_bayar = new double[20];
 	String[] barang = new String[20];
 	String[] harga = new String[20];
 	double[] subtotal = new double[20];
+	double[] bayar = new double[20];
+	double[] kembalian = new double[20];
 	String ulang;
 	int i=1;
 		
@@ -30,13 +36,12 @@ public class fix_UTS{
                     System.out.println("|================ Pesanan ke-"+(i+1)+" ================|");
                     System.out.println("|==============================================|");
                     System.out.print("  >>  Nama Barang : ");
-                    barang[i]=input.next();//.replace(" ","");
-//                    System.out.println("----------------------------------------------");
+                    barang[i]=input.next().replace(" ","-");
                     System.out.print("  >>  harga       : ");
                     harga[i]=input.next();
                     System.out.print("  >>  jumlah beli : ");
                     jumlah[i]=input.next();
-//                    System.out.println("|==============================================|");
+                    System.out.println("|==============================================|");
                     System.out.println();
                     i++;
 		
@@ -44,20 +49,43 @@ public class fix_UTS{
                     ulang = input.next();
                 }while(ulang.equalsIgnoreCase("y")); //mengulang pesanan
                 
-                    while(ulang.equalsIgnoreCase("n")){//jika value ulang false maka akan dieksekusi
-                        System.out.println();
-                        System.out.println();
-                        System.out.println("------------------------------------------");
-                	System.out.println("| No\tnama\tjumlah\tharga\tsubtotal |");
-                	System.out.println("------------------------------------------");
+//                    while(ulang.equalsIgnoreCase("n")){//jika value ulang false maka akan dieksekusi
+                              formatRp.setCurrencySymbol("Rp. ");
+                              formatRp.setMonetaryDecimalSeparator(',');
+                              formatRp.setGroupingSeparator('.');
+                              kursIndonesia.setDecimalFormatSymbols(formatRp);
                         
-                        for( i=0;i<=barang.length;i++){//perulangan untuk menghitung dan menampilkan output
-                	subtotal[i] = (Integer.parseInt(jumlah[i]) * Integer.parseInt(harga[i]));
-                	System.out.println("| "+(i+1)+"\t"+barang[i]+"\t"+Integer.parseInt(jumlah[i])+"\t"+Integer.parseInt(harga[i])+"\t"+subtotal[i]+" |");
-                	System.out.println("------------------------------------------");
+                        System.out.println();
+                        System.out.println("|================================================================|");
+                        System.out.println("|             TERIMA KASIH,SELAMAT BERBELANJA KEMBALI            |");
+                        System.out.println("|================================================================|");
+                        System.out.println("|----------------------------------------------------------------|");
+                        System.out.println("|no |  Nama Barang |     Harga     |  Jumlah Beli  |  Subtotal   |");
+                        System.out.println("|----------------------------------------------------------------|");
+                      
+                        
+                        for(i=0;i<=barang.length;i++){
+                            System.out.printf("| %-2d",(i+1));
+                            System.out.printf("|\t %-10s",barang[i]);
+                            System.out.printf("|\t %-10s",kursIndonesia.format(Integer.parseInt(harga[i])));
+                            System.out.printf("|\t %-10s",jumlah[i]);
+                            subtotal[i] = (Integer.parseInt(jumlah[i]) * Integer.parseInt(harga[i]));
+                            System.out.printf("|\t %-20s",kursIndonesia.format(subtotal[i])+"|");
+                            System.out.println();
+                            System.out.println("|---|--------------|---------------|---------------|-------------|");
+                            total_bayar[i]=+subtotal[i];
+                      	           
                         }
+//                            System.out.println("  >> Total Yang harus dibayarkan : " +kursIndonesia.format(total_bayar[i]) );
+//                            System.out.print  ("  >> Bayar                       : ");
+//                            int buy = input.nextInt();
+//                            int kembalian = bayar - total_bayar;
+//                            System.out.println("  >> Kembalian anda              : " + kursIndonesia.format(kembalian[(i+barang.length)]));
+                        
+                        
+                        
 	
                     }
-            }
+//            }
 }
 }
