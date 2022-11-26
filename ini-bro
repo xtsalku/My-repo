@@ -1,0 +1,63 @@
+import java.util.*;
+public class fix_UTS{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+	String[] jumlah = new String[20];
+	//String[] nospace = new String[20];
+	String[] barang = new String[20];
+	String[] harga = new String[20];
+	double[] subtotal = new double[20];
+	String ulang;
+	int i=1;
+		
+                System.out.println("|=============== Selamat Datang ===============|");
+		System.out.println("|=============== Toko Serba Ada ===============|");
+		System.out.println("|----------------------------------------------|");
+		System.out.println();
+		System.out.println("|================ dibuat oleh =================|");
+		System.out.println("|  1. Atsal Maulana Akbar Saputra (2110651129) |");
+		System.out.println("|  2. Oscar Wildan Akmal                       |");
+		System.out.println("|  3. M. Agil Fatoni                           |");
+		System.out.println("|  4. Eygin Suswanto Omar                      |");
+		System.out.println("|============= Selamat Berbelanja =============|");
+//		System.out.println("|=====      menu      =====|");
+    
+            for( i=0; 20>=i;){
+		do{
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("|==============================================|");
+                    System.out.println("|================ Pesanan ke-"+(i+1)+" ================|");
+                    System.out.println("|==============================================|");
+                    System.out.print("  >>  Nama Barang : ");
+                    barang[i]=input.next();//.replace(" ","");
+//                    System.out.println("----------------------------------------------");
+                    System.out.print("  >>  harga       : ");
+                    harga[i]=input.next();
+                    System.out.print("  >>  jumlah beli : ");
+                    jumlah[i]=input.next();
+//                    System.out.println("|==============================================|");
+                    System.out.println();
+                    i++;
+		
+                    System.out.print("ingin menambah pesanan [y/n] : ");
+                    ulang = input.next();
+                }while(ulang.equalsIgnoreCase("y")); //mengulang pesanan
+                
+                    while(ulang.equalsIgnoreCase("n")){//jika value ulang false maka akan dieksekusi
+                        System.out.println();
+                        System.out.println();
+                        System.out.println("------------------------------------------");
+                	System.out.println("| No\tnama\tjumlah\tharga\tsubtotal |");
+                	System.out.println("------------------------------------------");
+                        
+                        for( i=0;i<=barang.length;i++){//perulangan untuk menghitung dan menampilkan output
+                	subtotal[i] = (Integer.parseInt(jumlah[i]) * Integer.parseInt(harga[i]));
+                	System.out.println("| "+(i+1)+"\t"+barang[i]+"\t"+Integer.parseInt(jumlah[i])+"\t"+Integer.parseInt(harga[i])+"\t"+subtotal[i]+" |");
+                	System.out.println("------------------------------------------");
+                        }
+	
+                    }
+            }
+}
+}
