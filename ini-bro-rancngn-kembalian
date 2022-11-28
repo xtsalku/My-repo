@@ -1,0 +1,71 @@
+public class Main{
+	public static void main(String[] args) {
+	    int uang=0,uangsisa=0,sisa=0;
+		int uangbayar=185300;
+		if(bay>=100000){
+		    sisa=bay/100000;
+		    System.out.println(sisa+" Lembar 100000");
+		    uang= uangbayar-(sisa*100000);
+		    //System.out.println("Lembar"+uangsisa);
+		    
+		}
+        if(uang>=50000){
+		    sisa=uang/50000;
+		    System.out.println(sisa+" Lembar 50000");
+		    uang= uang-(sisa*50000);
+		    //System.out.println("Lembar"+uangsisa);
+		    
+		}
+		if(uang>=20000){
+		    sisa=uang/20000;
+		    System.out.println(sisa+" Lembar 20000");
+		    uang= uang-(sisa*20000);
+		  //  System.out.println("Lembar"+ uang3);
+		    
+		}
+		if(uang>=10000){
+		    sisa=uang/10000;
+		    System.out.println(sisa+" Lembar 10000");
+		    uang= uang-(sisa*10000);
+		  //  System.out.println("Lembar"+ uang3);
+		    
+		}
+		if(uang>=5000){
+		    sisa=uang/5000;
+		    System.out.println(sisa+" Lembar 5000");
+		    uang=uang-(sisa*5000);
+		    
+		    
+		}
+		if(uang>=2000){
+		    sisa=uang/2000;
+		    System.out.println(sisa+" Lembar 2000");
+		    uang= uang-(sisa*2000);
+		}
+		if(uang>=1000){
+		    sisa=uang/1000;
+		    System.out.println(sisa+" Lembar 1000");
+		    uang= uang-(sisa*1000);  
+		}
+		if(uang>=500){
+		    sisa=uang/500;
+		    System.out.println(sisa+" Lembar 500");
+		    uang= uang-(sisa*500);
+		    
+		}
+		if(uang>=200){
+		    sisa=uang/200;
+		    System.out.println(sisa+" Lembar 200");
+		    uang= uang-(sisa*200);
+		    
+		}
+		if(uang>=100){
+		    sisa=uang/100;
+		    System.out.println(sisa+" Lembar 100");
+		    uangsisa= uang-(sisa*100);
+		  //  System.out.println(uangsisa);
+		    
+		}
+	    
+	}
+}
