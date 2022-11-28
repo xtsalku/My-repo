@@ -1,0 +1,178 @@
+import java.util.*;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+public class Main{
+	public static void main(String[] args) {
+                DecimalFormat kursIndonesia = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+                DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
+		Scanner input = new Scanner(System.in);
+	int[] jumlah = new int[20];
+	String[] barang = new String[20];
+	int[] harga = new int[20];
+	double[] subtotal = new double[20];
+	String ulang;
+        double total = 0, bay,kembalian,uang=0,uangsisa=0,sisa=0;;
+	int i=0;
+                        
+		System.out.println("|============================================================================|");
+                System.out.println("|=========================== Selamat Datang =================================|");
+		System.out.println("|=========================== Toko Serba Ada =================================|");
+		System.out.println("|----------------------------------------------------------------------------|");
+		System.out.println();
+		System.out.println("|============================ dibuat oleh ===================================|");
+		System.out.println("|            >> 1. Atsal Maulana Akbar Saputra (2110651129)                  |");
+		System.out.println("|            >> 2. Oscar Wildan Akmal          (2110651129)                  |");
+		System.out.println("|            >> 3. M. Agil Fatoni              (2110651129)                  |");
+		System.out.println("|            >> 4. Eygin Suswanto Omar         (2110651129)                  |");
+		System.out.println("|========================== Selamat Berbelanja ==============================|");
+		System.out.println("|============================================================================|");
+		
+    
+            for( i=0; 10>=i;){
+		do{
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("|============================================================================|");
+                    System.out.println("|=============================== Pesanan ke-"+(i+1)+" ===============================|");
+                    System.out.println("|============================================================================|");
+                    System.out.print("  >>  Nama Barang : ");
+                    barang[i]=input.next();//.replace(" ","-");
+                    System.out.print("  >>  harga       : ");
+                    harga[i]=input.nextInt();
+                    System.out.print("  >>  jumlah beli : ");
+                    jumlah[i]=input.nextInt();
+                    System.out.println("|============================================================================|");
+                    System.out.println();
+                    i++;
+		
+                    System.out.print("ingin menambah pesanan [y/n] : ");
+                    ulang = input.next();
+                }while(ulang.equalsIgnoreCase("y")); //mengulang pesanan
+                break;
+            }
+                
+                              formatRp.setCurrencySymbol("Rp. ");
+                              formatRp.setMonetaryDecimalSeparator(',');
+                              formatRp.setGroupingSeparator('.');
+                              kursIndonesia.setDecimalFormatSymbols(formatRp);
+                        
+                        System.out.println();
+                        System.out.println("|============================================================================|");
+                        System.out.println("|                   TERIMA KASIH,SELAMAT BERBELANJA KEMBALI                  |");
+                        System.out.println("|============================================================================|");
+                        System.out.println("|----------------------------------------------------------------------------|");
+                        System.out.println("|no |  Nama Barang |          Harga          |Jumlah|        Subtotal        |");
+                        System.out.println("|----------------------------------------------------------------------------|");
+                      
+                        
+                        for(i=0;i<subtotal.length;i++){
+                            System.out.printf("| %-2d",(i+1));
+                            System.out.printf("|\t %-10s",barang[i]);
+                            System.out.printf("|\t %-20s",kursIndonesia.format((harga[i])));
+                            System.out.printf("|\t %-3s",jumlah[i]);
+                            subtotal[i] = (jumlah[i]) * (harga[i]);
+                            System.out.printf("|\t %-20s",kursIndonesia.format(subtotal[i]));
+                            System.out.printf("|");
+                            System.out.println();
+                            System.out.println("|---|--------------|-------------------------|------|------------------------|");
+                            total += subtotal[i];
+                            if(barang[i]==null){
+                                break;
+                            }else{}
+                      	           
+                        }
+                            System.out.printf("|  >> Total Yang harus dibayarkan : %-40s",kursIndonesia.format(total));
+                            System.out.printf("|\n");
+                            System.out.printf  ("|  >> Bayar                       :  ");
+                            bay = input.nextInt();
+                            uang = bay - total;
+                            System.out.println("|  Anda Menerima Kembalian :");
+                            if(uang>=100000){
+		                            sisa=uang/100000;
+		                            System.out.println("|---------------------------------------------------------------------------|");
+		                            System.out.println(sisa+" Lembar 100000");
+		                            uang= uang-(sisa*100000);
+		      
+		                    }
+                            if(uang>=50000){
+		                            sisa=uang/50000;
+		                            System.out.println("|---------------------------------------------------------------------------|");
+		                            System.out.println(sisa+" Lembar 50000");
+		                            uang= uang-(sisa*50000);
+		   
+	                    	}
+		                    if(uang>=20000){
+		                            sisa=uang/20000;
+		                            System.out.println("|---------------------------------------------------------------------------|");
+		                            System.out.println(sisa+" Lembar 20000");
+		                            uang= uang-(sisa*20000);
+		    
+		                    }
+		                    if(uang>=10000){
+		                            sisa=uang/10000;
+		                            System.out.println("|---------------------------------------------------------------------------|");
+		                            System.out.println(sisa+" Lembar 10000");
+		                            uang= uang-(sisa*10000);
+		    
+                    		}
+                    		if(uang>=5000){
+                    		    sisa=uang/5000;
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    System.out.println(sisa+" Lembar 5000");
+                    		    uang=uang-(sisa*5000);
+                    		    
+                    		}
+                    		if(uang>=2000){
+                    		    sisa=uang/2000;
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    System.out.println(sisa+" Lembar 2000");
+                    		    uang= uang-(sisa*2000);
+                    		}
+                    		if(uang>=1000){
+                    		    sisa=uang/1000;
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    System.out.println(sisa+" Lembar 1000");
+                    		    uang= uang-(sisa*1000);  
+                    		}
+                    		if(uang>=500){
+                    		    sisa=uang/500;
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    System.out.println(sisa+" Lembar 500");
+                    		    uang= uang-(sisa*500);
+                    		    
+                    		}
+                    		if(uang>=200){
+                    		    sisa=uang/200;
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    System.out.println(sisa+" Lembar 200");
+                    		    uang= uang-(sisa*200);
+                    		    
+                    		}
+                    		if(uang>=100){
+                    		    sisa=uang/100;
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    System.out.println(sisa+" Lembar 100");
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    System.out.println("|                                Selesai                                    |");
+                    		    System.out.println("|---------------------------------------------------------------------------|");
+                    		    uangsisa= uang-(sisa*100);
+                    		    
+                    		  
+                    		}
+                    		if(uang==uang){
+                    		  //  sisa=uang/100;
+                    		 System.out.println("|----------------------------------------------------------------------------|");
+                    		 System.out.println("|                             Uang Anda Pas                                  |");
+                    		 System.out.println("|----------------------------------------------------------------------------|");
+                             //  uangsisa= uang-(sisa*100);
+                    		  
+                    		}
+                    		System.out.println("|-----------------------------------------------------------------------------|");
+                            
+                            // System.out.println("  >> Kembalian anda              : " + kursIndonesia.format(kembalian));
+                        
+                        
+                        
+	
+            }
+}
