@@ -21,9 +21,9 @@ public class main{
 		System.out.println();
 		System.out.println("|================================== dibuat oleh =====================================|");
 		System.out.println("|                >> 1. Atsal Maulana Akbar Saputra (2110651129)                      |");
-		System.out.println("|                >> 2. Oscar Wildan Akmal          (2110651129)                      |");
-		System.out.println("|                >> 3. M. Agil Fatoni              (2110651129)                      |");
-		System.out.println("|                >> 4. Eygin Suswanto Omar         (2110651129)                      |");
+		System.out.println("|                >> 2. Oscar Wildan Akmal          (2110651123)                      |");
+		System.out.println("|                >> 3. M. Agil Fatoni              (2110651138)                      |");
+		System.out.println("|                >> 4. Eygin Suswanto Omar         (2110651101)                      |");
 		System.out.println("|=============================== Selamat Berbelanja =================================|");
 		System.out.println("|====================================================================================|");
 		
@@ -86,7 +86,7 @@ public class main{
                             kembalian = bay - total;
                             if(bay==total){
                                 System.out.println("|====================================================================================|");
-                                System.out.println("|                                  UANG ADA PAS                                      |");
+                                System.out.println("|                                  UANG ANDA PAS                                      |");
                                 System.out.println("|====================================================================================|");
                         
                                 
