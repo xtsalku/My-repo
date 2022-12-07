@@ -243,10 +243,11 @@ def tot_bay():
         
 
          # =====================  Struck Pesanan ===========================
+        enter = '\n'
         waktu = datetime.now().time()
         if bill_details.get(1.0,"end") != "":
                 bill_details.delete(1.0,"end")
-                bill_details.insert(1.0,f" Billno-{random.randint(100,1000)}\t{waktu}\n Items(q) \t \tqty \n{'es_jeruk ('+str(es_jeruk_q) + ')' + '         ' + str(int(es_jeruk_q) * es_jeruk_harga) + '   '  if es_jeruk_var.get() == 1 else''}{'kopi ('+str(kopi_q) + ')' + '        ' + str(int(kopi_q) * kopi_harga) + '  '  if kopi_var.get() == 1 else ''}{ 'es_teh ('+str(es_teh_q) + ')' + '           ' + str(int(es_teh_q) * es_teh_harga) + '  '  if es_teh_var.get() == 1 else''}{'jus_buah ('+str(jus_buah_q) + ')' + '         ' + str(int(jus_buah_q) * jus_buah_harga) + '   '  if jus_buah_var.get() == 1 else''}{'Jhosua('+str(soda_gembira_q) + ')' + '         ' + str(int(soda_gembira_q) * soda_gembira_harga) + '   '  if soda_gembira_var.get() == 1 else''}{'es_coklat('+str(es_coklat_q) + ')' + '           ' + str(int(es_coklat_q) * es_coklat_harga) + '   '  if es_coklat_var.get() == 1 else''}{'milo('+str(milo_q) + ')' + '     ' + str(int(milo_q) * milo_harga) + '     '  if milo_var.get() == 1 else''}{'sprite('+str(sprite_q) + ')' + '     ' + str(int(sprite_q) * sprite_harga) + '     '  if sprite_var.get() == 1 else''}{'roti('+str(roti_q) + ')' + '          ' + str(int(roti_q) * roti_harga) + '     '  if roti_var.get() == 1 else''}{'nasi goreng('+str(nasi_goreng_q) + ')' + '     ' + str(int(nasi_goreng_q) * nasi_goreng_harga) + '  '  if nasi_goreng_var.get() == 1 else''}{'bakso('+str(bakso_q) + ')' + '  ' + str(int(bakso_q) * bakso_harga) + '  '  if bakso_var.get() == 1 else''}{'soto('+str(soto_q) + ')' + '        ' + str(int(soto_q) * soto_harga) + '   '  if soto_var.get() == 1 else''}{'rawon('+str(rawon_q) + ')' + '        ' + str(int(rawon_q) * rawon_harga) + '   '  if rawon_var.get() == 1 else''}{'nasi_campur('+str(nasi_campur_q) + ')' + '        ' + str(int(nasi_campur_q) * nasi_campur_harga) + '   '  if nasi_campur_var.get() == 1 else''}{'nasi pecel('+str(nasi_pecel_q) + ')' + '    ' + str(int(nasi_pecel_q) * nasi_pecel_harga) + '  '  if nasi_pecel_var.get() == 1 else''}{'nasi_lalapan('+str(nasi_lalapan_q) + ')' + '          ' + str(int(nasi_lalapan_q) * nasi_lalapan_harga) + '    '  if nasi_lalapan_var.get() == 1 else''}\nPPN    {pajak.get()}\n         {jumlah_bayar.get()} \n total          {total_bay.get()}\n ")
+                bill_details.insert(1.0,f" Billno-{random.randint(1,1000)}\t{waktu}\n Items(q) \t \tqty \n{' es jeruk ('+str(es_jeruk_q) + ')' + '      ' + str(int(es_jeruk_q) * es_jeruk_harga) + '      ' if es_jeruk_var.get() == 1 else'  '}{'kopi ('+str(kopi_q) + ')' + '      ' + str(int(kopi_q) * kopi_harga) + '     '  if kopi_var.get() == 1 else ''}{ 'es_teh ('+str(es_teh_q) + ')' + '      ' + str(int(es_teh_q) * es_teh_harga) + '     '  if es_teh_var.get() == 1 else''}{'jus_buah ('+str(jus_buah_q) + ')' + '      ' + str(int(jus_buah_q) * jus_buah_harga) + '     '  if jus_buah_var.get() == 1 else''}{'Jhosua('+str(soda_gembira_q) + ')' + '      ' + str(int(soda_gembira_q) * soda_gembira_harga) + '     '  if soda_gembira_var.get() == 1 else''}{'es_coklat('+str(es_coklat_q) + ')' + '      ' + str(int(es_coklat_q) * es_coklat_harga) + '     '  if es_coklat_var.get() == 1 else''}{'milo('+str(milo_q) + ')' + '      ' + str(int(milo_q) * milo_harga) + '     '  if milo_var.get() == 1 else''}{'sprite('+str(sprite_q) + ')' + '      ' + str(int(sprite_q) * sprite_harga) + '     '  if sprite_var.get() == 1 else''}{'roti('+str(roti_q) + ')' + '      ' + str(int(roti_q) * roti_harga) + '     '  if roti_var.get() == 1 else''}{'nasi goreng('+str(nasi_goreng_q) + ')' + '     ' + str(int(nasi_goreng_q) * nasi_goreng_harga) + '  '  if nasi_goreng_var.get() == 1 else''}{'bakso('+str(bakso_q) + ')' + '  ' + str(int(bakso_q) * bakso_harga) + '  '  if bakso_var.get() == 1 else''}{'soto('+str(soto_q) + ')' + '        ' + str(int(soto_q) * soto_harga) + '   '  if soto_var.get() == 1 else''}{'rawon('+str(rawon_q) + ')' + '        ' + str(int(rawon_q) * rawon_harga) + '   '  if rawon_var.get() == 1 else''}{'nasi_campur('+str(nasi_campur_q) + ')' + '        ' + str(int(nasi_campur_q) * nasi_campur_harga) + '   '  if nasi_campur_var.get() == 1 else''}{'nasi pecel('+str(nasi_pecel_q) + ')' + '    ' + str(int(nasi_pecel_q) * nasi_pecel_harga) + '  '  if nasi_pecel_var.get() == 1 else''}{'nasi_lalapan('+str(nasi_lalapan_q) + ')' + '          ' + str(int(nasi_lalapan_q) * nasi_lalapan_harga) + '    '  if nasi_lalapan_var.get() == 1 else''}\n PPN    {pajak.get()}         {jumlah_bayar.get()} \n total          {total_bay.get()}\n ")
         
                 # ================== End  =============================
         
@@ -255,7 +256,7 @@ def tot_bay():
 
 def save():
         layar.filename = filedialog.asksaveasfile(mode="w",defaultextension='.txt')
-        if layar.filename is Nsatu:
+        if layar.filename is None:
                 return
         file_save =  str(bill_details.get(1.0,END))
         layar.filename.write(file_save)
@@ -405,126 +406,126 @@ def nasi_lalapan_chk():
 
 # ===== Kalkulator Sederhana disini ================
 
-def sembilan():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","9")
-        else:
-                result.insert("end","9")
+# def sembilan():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","9")
+#         else:
+#                 result.insert("end","9")
                 
             
 
-def delapan():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","8")
-        else:
-                result.insert("end","8")
+# def delapan():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","8")
+#         else:
+#                 result.insert("end","8")
 
-def tujuh():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","7")
-        else:
-                result.insert("end","7")
+# def tujuh():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","7")
+#         else:
+#                 result.insert("end","7")
 
-def enam():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","6")
-        else:
-                result.insert("end","6")
+# def enam():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","6")
+#         else:
+#                 result.insert("end","6")
 
-def lima():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","5")
-        else:
-                result.insert("end","5")
+# def lima():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","5")
+#         else:
+#                 result.insert("end","5")
 
-def empat():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","4")
-        else:
-                result.insert("end","4")
+# def empat():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","4")
+#         else:
+#                 result.insert("end","4")
 
-def tiga():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","3")
-        else:
-                result.insert("end","3")
+# def tiga():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","3")
+#         else:
+#                 result.insert("end","3")
 
-def dua():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","2")
-        else:
-                result.insert("end","2")
+# def dua():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","2")
+#         else:
+#                 result.insert("end","2")
 
-def satu():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","1")
-        else:
-                result.insert("end","1")
+# def satu():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","1")
+#         else:
+#                 result.insert("end","1")
 
-def nol():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","0")
-        else:
-                result.insert("end","0")
+# def nol():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","0")
+#         else:
+#                 result.insert("end","0")
 
-def tambah():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","+")
-        else:
-                result.insert("end","+")
+# def tambah():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","+")
+#         else:
+#                 result.insert("end","+")
 
-def kurang():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","-")
-        else:
-                result.insert("end","-")
+# def kurang():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","-")
+#         else:
+#                 result.insert("end","-")
 
-def kali():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","*")
-        else:
-                result.insert("end","*")
+# def kali():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","*")
+#         else:
+#                 result.insert("end","*")
 
-def bagi():
-        if 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
-                result.insert("end","/")
-        else:
-                result.insert("end","/")
+# def bagi():
+#         if 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
+#                 result.insert("end","/")
+#         else:
+#                 result.insert("end","/")
 
-def sama_dengan():
-
-
-        if result.get() == "":
-                result.insert("end","error")
-        elif result.get()[0] == "0" or result.get()[0] == "+" or result.get()[0] == "*" or result.get()[0] == "/":
-                result.delete(0,"end")
-                result.insert("end","error")
-        elif 'error' in result.get() or '=' in result.get():
-                result.delete(0,"end")
+# def sama_dengan():
 
 
-        else:
-                res = result.get()
-                res = eval(res)
-                result.insert("end"," = ")
-                result.insert("end",res)
+#         if result.get() == "":
+#                 result.insert("end","error")
+#         elif result.get()[0] == "0" or result.get()[0] == "+" or result.get()[0] == "*" or result.get()[0] == "/":
+#                 result.delete(0,"end")
+#                 result.insert("end","error")
+#         elif 'error' in result.get() or '=' in result.get():
+#                 result.delete(0,"end")
 
-def clear():
-        result.delete(0,"end")
+
+#         else:
+#                 res = result.get()
+#                 res = eval(res)
+#                 result.insert("end"," = ")
+#                 result.insert("end",res)
+
+# def clear():
+#         result.delete(0,"end")
 
 #========== end ========================
 
@@ -677,11 +678,11 @@ def hapus():
 layar = tk.Tk()
 #layar.attributes('-fullscreen',True)
 layar.geometry('800x500')
-layar.maxsize(800,390)
-layar.minsize(800,390)
+layar.maxsize(690,390)
+layar.minsize(690,390)
 layar.title("Kasir Warung Bu titik")
 
-frame = Frame(layar,width=800,height=70,relief=RIDGE,borderwidth=5,bg='#248aa2')
+frame = Frame(layar,width=690,height=70,relief=RIDGE,borderwidth=5,bg='#248aa2')
 frame.place(x=0,y=0)
 
 l1 = Label(frame,text="Warung Bu Titik",font=('roboto',30,'bold'),bg='#248aa2',fg="#ffffff")
@@ -705,52 +706,52 @@ es_jeruk_var = IntVar()
 es_jeruk = Checkbutton(Minuman,text="esjeruk",variable=es_jeruk_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=es_jeruk_chk)
 es_jeruk.place(x=2,y=2)
 
-es_jeruk_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state='disabled')
-es_jeruk_qty.place(x=74,y=2)
+es_jeruk_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state='disabled')
+es_jeruk_qty.place(x=90,y=2)
 es_jeruk_qty.insert(0,"0")
 
 kopi_var = IntVar()
 kopi = Checkbutton(Minuman,text="kopi",variable=kopi_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=kopi_chk)
 kopi.place(x=2,y=22)
 
-kopi_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state="disabled")
-kopi_qty.place(x=74,y=22)
+kopi_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state="disabled")
+kopi_qty.place(x=90,y=22)
 
 es_teh_var = IntVar()
 es_teh = Checkbutton(Minuman,text="esteh",variable=es_teh_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=es_teh_chk)
 es_teh.place(x=2,y=44)
-es_teh_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state="disabled")
-es_teh_qty.place(x=74,y=44)
+es_teh_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state="disabled")
+es_teh_qty.place(x=90,y=44)
 
 jus_buah_var = IntVar()
 jus_buah = Checkbutton(Minuman,text="jus",variable=jus_buah_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=jus_buah_chk)
 jus_buah.place(x=2,y=66)
-jus_buah_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state="disabled")
-jus_buah_qty.place(x=74,y=66)
+jus_buah_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state="disabled")
+jus_buah_qty.place(x=90,y=66)
 
 soda_gembira_var = IntVar()
 soda_gembira = Checkbutton(Minuman,text="Jhosua",variable=soda_gembira_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=soda_gembira_chk)
 soda_gembira.place(x=2,y=88)
-soda_gembira_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state="disabled")
-soda_gembira_qty.place(x=74,y=88)
+soda_gembira_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state="disabled")
+soda_gembira_qty.place(x=90,y=88)
 
 es_coklat_var = IntVar()
 es_coklat = Checkbutton(Minuman,text="nyoklat",variable=es_coklat_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=es_coklat_chk)
 es_coklat.place(x=2,y=110)
-es_coklat_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state="disabled")
-es_coklat_qty.place(x=74,y=110)
+es_coklat_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state="disabled")
+es_coklat_qty.place(x=90,y=110)
 
 milo_var = IntVar()
 milo = Checkbutton(Minuman,text="milo",variable=milo_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=milo_chk)
 milo.place(x=2,y=132)
-milo_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state="disabled")
-milo_qty.place(x=74,y=132)
+milo_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state="disabled")
+milo_qty.place(x=90,y=132)
 
 sprite_var = IntVar()
 sprite = Checkbutton(Minuman,text="sprite",variable=sprite_var,font=('verdana',8,'bold'),onvalue=1,offvalue=0,command=sprite_chk)
 sprite.place(x=2,y=154)
-sprite_qty = Entry(Minuman,width=7,borderwidth=4,relief=SUNKEN,state="disabled")
-sprite_qty.place(x=74,y=154)
+sprite_qty = Entry(Minuman,width=5,borderwidth=4,relief=SUNKEN,state="disabled")
+sprite_qty.place(x=90,y=154)
 
 
 innerframe2 = Frame(frame1,width=290,height=220,relief=RIDGE,borderwidth=3,bg='#248aa2',highlightbackground="white", highlightcolor="white", highlightthickness=2)        
@@ -854,17 +855,16 @@ total_bay.place(x=330,y=44)
 
 
 #============================================================================
-frame3= Frame(layar,width=350,height=320,relief=RIDGE,borderwidth=5,bg='#248aa2')
+frame3= Frame(layar,width=240,height=320,relief=RIDGE,borderwidth=5,bg='#248aa2')
 frame3.place(x=450,y=70)
 
-innerframe4 = Frame(frame3,width=340,height=310,relief=RIDGE,borderwidth=3,bg='#248aa2',highlightbackground="white", highlightcolor="white", highlightthickness=2)        
+innerframe4 = Frame(frame3,width=230,height=310,relief=RIDGE,borderwidth=3,bg='#248aa2',highlightbackground="white", highlightcolor="white", highlightthickness=2)        
 innerframe4.place(x=0,y=0)
 
 
-result = Entry(innerframe4,width=28,relief=SUNKEN,borderwidth=3)
+result = Entry(innerframe4,width=15,relief=SUNKEN,borderwidth=3)
 result.place(x=2,y=0)
-
-# =============== code kalkulator jika ingin di tambahkan ===============
+# =============== Tempat kalkulator jika ingin di tambahkan ===============
 # sembilan = Button(innerframe4,text="9",padx=15,relief=RAISED,borderwidth=2,font=('verdana',10,'bold'),bg='#248aa2',fg="white",command=sembilan)
 # sembilan.place(x=0,y=24)
 # delapan = Button(innerframe4,text="8",padx=15,relief=RAISED,borderwidth=2,font=('verdana',10,'bold'),bg='#248aa2',fg="white",command=delapan)
@@ -903,7 +903,7 @@ result.place(x=2,y=0)
 # bagi.place(x=144,y=102)
 # ========================= End kalkulator ====================
 
-bill_details = ScrolledText(innerframe4,width=44,height=18,relief=SUNKEN,borderwidth=3,font=('courier',9,''))
+bill_details = ScrolledText(innerframe4,width=28,height=18,relief=SUNKEN,borderwidth=3,font=('courier',9,''))
 bill_details.place(x=0,y=-1)
 
 
@@ -916,11 +916,11 @@ save.place(x=43,y=275)
 kirim = Button(innerframe4,text="kirim",relief=RAISED,borderwidth=2,font=('verdana',8,'bold'),bg='#248aa2',fg="white",command=kirim)
 kirim.place(x=82,y=275)
 
-clr = Button(innerframe4,text="Clear",relief=RAISED,borderwidth=2,font=('verdana',8,'bold'),bg='#248aa2',fg="white",command=exit)
+clr = Button(innerframe4,text="Clear",relief=RAISED,borderwidth=2,font=('verdana',8,'bold'),bg='#248aa2',fg="white",command=hapus)
 clr.place(x=124,y=275)
 
-exit = Button(innerframe4,text="exit",relief=RAISED,borderwidth=2,font=('verdana',8,'bold'),bg='#248aa2',fg="white",command=hapus)
-exit.place(x=280,y=275)
+exit = Button(innerframe4,text="exit",relief=RAISED,borderwidth=2,font=('verdana',8,'bold'),bg='#248aa2',fg="white",command=exit)
+exit.place(x=170,y=275)
 
 layar.mainloop()
 
