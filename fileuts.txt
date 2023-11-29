@@ -1,0 +1,73 @@
+fun main() {
+   val data = mutableListOf<Pair<String, Int>>()
+   do {
+
+   print("Login : ")
+   val user= readln()
+
+   if (user=="supervisor") {
+      do {
+         println("==============")
+         println("Form Isi Data")
+         println("==============")
+         print("Masukkan nama: ")
+         val nama = readLine()
+
+         print("Jumlah Jam Lembur: ")
+         val jam = readLine()?.toIntOrNull()
+
+         if (nama != null && jam != null) {
+            data.add(Pair(nama, jam))
+         } else {
+            println("Input tidak valid. Silakan masukkan kembali.")
+         }
+
+         print("Masukkan data lagi? (y/n): ")
+      } while (readLine()?.equals("y", ignoreCase = true) == true)
+   }else if (user=="manajer") {
+      // Menampilkan isi array
+      println("Data yang dimasukkan:")
+      data.forEach { (nama, jam) ->
+         println("==============")
+         println("List Data Lembur Pegawai")
+         println("==============")
+         println("Nama: $nama\nJam Lembur: $jam")
+      }
+      print("Validasi Data (y/n) : ")
+      val validasi= readln()
+      if (validasi=="n"){
+         println("Data Tidak Disetujui")
+         data.clear()
+      }else{
+         println("Data Disetujui")
+      }
+
+   }else if (user=="keuangan"){
+      println("Dashboard Keuangan")
+      data.forEach { (nama, jam) ->
+         println("==============")
+         println("List Data Gaji Lembur Pegawai")
+         println("==============")
+         println("Nama: $nama\nJam Lembur: $jam\nGaji Lembur:${jam*10000}\nTotal Gaji:${jam*10000+20000}")
+      }
+   }else if(user=="pimpinan"){
+      println("Dashboard Pimpinan")
+      data.forEach { (nama, jam) ->
+         println("==============")
+         println("List Data Lembur Pegawai")
+         println("==============")
+         println("Nama: $nama\nJam Lembur: $jam")
+      }
+      println()
+      data.forEach { (nama, jam) ->
+         println("==============")
+         println("List Data Gaji Lembur Pegawai")
+         println("==============")
+         println("Nama: $nama\nGaji Lembur:${jam*10000}\nTotal Gaji:${jam*10000+20000}")
+      }
+
+   }
+         println()
+      print("Switch User : ")
+   }while (readLine()?.equals("y", ignoreCase = true) == true)
+}
